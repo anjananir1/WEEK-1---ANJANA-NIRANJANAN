@@ -10,7 +10,7 @@ struct Student {
 }; 
  
 int main() { 
-    // Declare and initialize an array of Student structs 
+    // Declare an array of Student structs 
     Student students[3];  
     students[0] = {101, "Michael", 3.8}; 
     students[1] = {102, "Lakisha", 3.5}; 
