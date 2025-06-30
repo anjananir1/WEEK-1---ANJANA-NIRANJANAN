@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Item {
+public:
+    string name;
+    int quantity;
+
+    Item(string n, int q) : name(n), quantity(q) {}
+
+    virtual void display() = 0; // Pure virtual function
+};
+
+// Perishable item
+class Perishable : public Item {
+public:
+    Perishable(string n, int q) : Item(n, q) {}
+
+    void display() override {
+        cout << name << " (Perishable), Qty: " << quantity << endl;
+    }
+};
+
+// Non-Perishable item
+class NonPerishable : public Item {
+public:
+    NonPerishable(string n, int q) : Item(n, q) {}
+
+    void display() override {
+        cout << name << " (Non-Perishable), Qty: " << quantity << endl;
+    }
+};
+
+int main() {
+
+    Item* item1 = new Perishable("Milk", 5);
+    Item* item2 = new NonPerishable("Rice", 10);
+
+    item1->display();
+    item2->display();
+
+    delete item1;
+    delete item2;
+
+    return 0;
+}
