@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-// Created this class to store one stock entry
+// I created this class to store one stock entry
 class StockEntry {
 public:
     string date;
@@ -29,7 +29,7 @@ public:
     }
 };
 
-// I created this Function to extract a field from a CSV line
+// I created this function to extract a field from a CSV line
 string extractField(string& line) {
     int pos = line.find(',');               
     string field = line.substr(0, pos);    
@@ -39,7 +39,7 @@ string extractField(string& line) {
 
 int main() {
     const int SIZE = 10;
-    StockEntry* entries[SIZE]; //Array to hold 10 entries
+    StockEntry* entries[SIZE]; //This arrray is to hold 10 entries
     ifstream file("Download Data - STOCK_US_XNAS_NFLX.csv");
     string line;
 
@@ -48,7 +48,7 @@ int main() {
         return 1;
     }
 
-    getline(file, line); // Skip header
+    getline(file, line);
 
     int index = 0;
     while (getline(file, line) && index < SIZE) {
